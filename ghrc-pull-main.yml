@@ -30,7 +30,7 @@ jobs:
           
     - 
         name: Pull Docker image
-        run: docker pull 'ghcr.io/maersk-global/github-action-in-csharp-samples:v1.0'
+        run: docker pull 'ghcr.io/FatimaMookhtiar/github-action-in-csharp-samples:v1.0'
         
     -
         name: github actions repo checkout
