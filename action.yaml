@@ -12,7 +12,7 @@ inputs:
     required: false
 outputs:
   date:
-    description: 'The date when someone was greeteed.'  
+    description: 'The date when someone was greeted.'  
 runs:
   using: 'docker'
 #  image: 'Dockerfile'
