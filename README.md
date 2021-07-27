@@ -39,8 +39,8 @@ jobs:
     steps:
       - uses: actions/checkout@v2
         with:
-            repository: Maersk-Global/github-action-in-csharp-samples
-            token: ${{ secrets.ADMIRAL_GITOPS }} # `ADMIRAL_GITOPS` is a secret that contains your PAT         
+            repository: github-action-in-csharp-samples
+            token: ${{ secrets.PAT }} # `PAT` is a secret that contains your PAT         
       -
         id: ghactions
         uses: ./
