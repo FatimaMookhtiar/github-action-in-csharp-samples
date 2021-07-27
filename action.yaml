@@ -1,0 +1,24 @@
+name: 'My C# GitHub Action'
+description: 'Greet someone or the whole world'
+branding:
+  icon: 'arrow-up-circle'
+  color: 'blue'
+inputs:
+  firstname:
+    description: 'Your First Name'
+    required: false
+  lastname:
+    description: 'Your Last Name'
+    required: false
+outputs:
+  date:
+    description: 'The date when someone was greeteed.'  
+runs:
+  using: 'docker'
+#  image: 'Dockerfile'
+  image: 'ghcr.io/maersk-global/github-action-in-csharp-samples:v1.0'  
+  args:
+    - --firstname
+    - ${{ inputs.firstname }}
+    - --lastname
+    - ${{ inputs.lastname }}   
