@@ -16,7 +16,7 @@ outputs:
 runs:
   using: 'docker'
 #  image: 'Dockerfile'
-  image: 'ghcr.io/maersk-global/github-action-in-csharp-samples:v1.0'  
+  image: 'ghcr.io/fatimamookhtiar/github-action-in-csharp-samples:v1.0'  
   args:
     - --firstname
     - ${{ inputs.firstname }}
