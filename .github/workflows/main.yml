@@ -1,0 +1,43 @@
+# This is a basic workflow to help you get started with Actions
+name: CI
+
+# Controls when the action will run. 
+on:
+  # Triggers the workflow on push or pull request events but only for the main branch
+  push:
+    branches: [ main ]
+  pull_request:
+    branches: [ main ]
+
+  # Allows you to run this workflow manually from the Actions tab
+  workflow_dispatch:
+
+# A workflow run is made up of one or more jobs that can run sequentially or in parallel
+jobs:
+  # This workflow contains a single job called "build"
+  build:
+    # The type of runner that the job will run on
+    runs-on: ubuntu-latest
+    # Steps represent a sequence of tasks that will be executed as part of the job
+    steps:        
+    -
+        name: Login to GitHub Packages Docker Registry
+        uses: docker/login-action@v1
+        with:
+          registry: 'ghcr.io/maersk-global/github-action-in-csharp-samples:v1.0'
+          username: ${{ github.actor }}
+          password: ${{ secrets.GHCR_PAT }}          
+          
+    - 
+        name: Pull Docker image
+        run: docker pull 'ghcr.io/maersk-global/github-action-in-csharp-samples:v1.0'
+        
+    -
+        name: github actions repo checkout
+        uses: actions/checkout@v2     
+    -
+        id: ghactions
+        uses: ./
+        with:          
+          firstname: "Fatima"
+          lastname: "Mookhtiar"  
