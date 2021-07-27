@@ -27,4 +27,4 @@ jobs:
           file: ./Dockerfile
           push: true
           tags: |
-            ghcr.io/maersk-global/github-action-in-csharp-samples:v1.0    
+            ghcr.io/FatimaMookhtiar/github-action-in-csharp-samples:v1.0    
